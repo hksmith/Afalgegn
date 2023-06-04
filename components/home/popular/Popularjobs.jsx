@@ -23,7 +23,8 @@ const Popularjobs = () => {
   const [selectedJob, setSelectedJob] = useState();
 
   const handleCardPress = (item) => {
-    
+    router.push(`/job-details/${item.job_id}`);
+    setSelectedJob(item.job_id);
   };
 
   return (
@@ -53,6 +54,7 @@ const Popularjobs = () => {
             keyExtractor={(item) => item?.job_id}
             contentContainerStyle={{ columnGap: SIZES.medium }}
             horizontal
+            showsHorizontalScrollIndicator={false}
           />
         )}
       </View>
